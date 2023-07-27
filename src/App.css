@@ -1,0 +1,129 @@
+
+.mytodo {
+  min-width: 800px;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.title {
+  display: flex;
+  height: 50px;
+  width: 70%;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+  /* border: 1px solid #ddd; */
+}
+
+.input-form, .addform {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+.input-form {
+  background-color: gainsboro;
+  border-radius: 12px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 30px;
+}
+.add-input {
+  border: none;
+  border-radius: 12px;
+  height: 40px;
+  width: 250px;
+  padding: 0 12px;
+}
+label {
+  font-size: 16px;
+  font-weight: 700;
+}
+.add-btn {
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  height: 40px;
+  width: 140px;
+}
+
+.todo-box {
+  width: 270px;
+  padding: 12px 24px 24px;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid teal;
+  border-radius: 10px;
+}
+
+.update-box {
+  margin-top: 10px;
+}
+
+.update-title {
+  font-size: 1.5em;
+  border-radius: 12px;
+  height: 40px;
+  width: 240px;
+  padding: 0 12px;
+}
+
+.update-content {
+  margin-top: 15px;
+  border-radius: 12px;
+  height: 50px;
+  width: 240px;
+  padding: 12px;
+  resize: none;
+}
+
+.working, .done {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.buttons {
+  display: flex;
+  gap:10px;
+  margin-top: 24px;
+}
+
+.delete {
+  background-color: white;
+  border: 2px solid red;
+  border-radius: 5px;
+  height: 40px;
+  width: 50%;
+}
+
+.complete {
+  background-color: white;
+  border: 2px solid green;
+  border-radius: 5px;
+  height: 40px;
+  width: 50%;
+}
+
+.update, .update-complete {
+  background-color: white;
+  border: 2px solid blue;
+  border-radius: 5px;
+  height: 40px;
+  width: 50%;
+}
+
+.delete:hover, .complete:hover, .update:hover, .update-complete:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+.add-btn:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
