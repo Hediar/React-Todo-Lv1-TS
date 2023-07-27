@@ -1,4 +1,11 @@
-const Button = ({role, name, fnc, para}) =>{
-    return <button className={role} onClick={(event) => fnc(para.id,event)}>{name}</button>
+const Button = (props: any) => {
+  return (
+    <button
+      className={props.role}
+      onClick={(event) => props.fnc(props.para.id, event)}
+    >
+      {props.children}
+    </button>
+  );
 };
- export default Button;
+export default Button;

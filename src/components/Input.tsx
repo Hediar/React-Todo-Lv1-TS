@@ -1,15 +1,15 @@
-const Input = ({labelName, value, Add}) => {
-    return (
-      <>
-      <label>{labelName}</label>
-            <input 
-            type='text'
-            value={value}
-            onChange={(event) => Add(event)}
-            className='add-input'
-            ></input>
-      </>
-    )
+const Input = (props: any) => {
+  return (
+    <>
+      <label>{props.labelName}</label>
+      <input
+        type="text"
+        value={props.value}
+        onChange={(event) => props.Add(event)}
+        className="add-input"
+      ></input>
+    </>
+  );
 };
 
 export default Input;
