@@ -2,8 +2,6 @@ import { useState } from "react";
 import Button from "./Button";
 import UpdateContent from "./UpdateContent";
 
-interface CardProps {}
-
 const Cards = (props: any) => {
   const [updateState, setUpdateState] = useState<boolean>(false);
   return (
@@ -12,22 +10,22 @@ const Cards = (props: any) => {
         <h2 className="work-title">{props.item.work}</h2>
         {props.item.content}
       </div>
-      <div className="update-box hidden">
-        <UpdateContent item={props.item}></UpdateContent>
-      </div>
+      {updateState && (
+        <div className="update-box">
+          <UpdateContent item={props.item}></UpdateContent>
+        </div>
+      )}
       <div className="buttons">
         <Button role={"delete"} fnc={props.fnc1} para={props.item}>
           삭제하기
         </Button>
 
         {updateState && (
-          <Button
-            role={"update-complete hidden"}
-            fnc={props.fnc4}
-            para={props.item}
-          >
-            수정완료
-          </Button>
+          <>
+            <Button role={"update-complete"} fnc={props.fnc4} para={props.item}>
+              수정완료
+            </Button>
+          </>
         )}
 
         {!updateState && (
