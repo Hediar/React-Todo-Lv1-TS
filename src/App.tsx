@@ -3,13 +3,7 @@ import { useEffect, useState } from "react";
 
 import Cards from "./components/Cards";
 import Input from "./components/Input";
-
-interface Work {
-  id: number;
-  work: string;
-  content: string;
-  isDone: boolean;
-}
+import { Work } from "./TodoType";
 
 function App() {
   const [title, setTitle] = useState<string>("");
@@ -155,8 +149,10 @@ function App() {
                   <Cards
                     key={item.id}
                     item={item}
-                    fnc1={clickDeleteButtonHandler}
-                    fnc2={clickCompleteButtonHandler}
+                    deletefnc={clickDeleteButtonHandler}
+                    statefnc={clickCompleteButtonHandler}
+                    working={working}
+                    setwork={setworking}
                   >
                     완료
                   </Cards>
@@ -176,8 +172,10 @@ function App() {
                   <Cards
                     key={item.id}
                     item={item}
-                    fnc1={clickDeleteButtonHandler}
-                    fnc2={clickCancelButtonHandler}
+                    deletefnc={clickDeleteButtonHandler}
+                    statefnc={clickCancelButtonHandler}
+                    working={working}
+                    setwork={setworking}
                   >
                     취소
                   </Cards>
