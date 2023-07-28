@@ -1,4 +1,4 @@
-import { InputType } from "../TodoType";
+import { InputType } from "../type/TodoType";
 
 const Input = (props: InputType) => {
   return (

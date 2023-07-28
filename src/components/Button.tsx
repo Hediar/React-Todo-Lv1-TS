@@ -1,4 +1,4 @@
-import { ButtonType } from "../TodoType";
+import { ButtonType } from "../type/TodoType";
 
 const Button = (props: ButtonType) => {
   return (

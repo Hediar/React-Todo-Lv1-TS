@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import Cards from "./components/Cards";
 import Input from "./components/Input";
-import { Work } from "./TodoType";
+import { Work } from "./type/TodoType";
 import { v4 } from "uuid";
 
 function App() {

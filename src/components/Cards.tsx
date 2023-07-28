@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import Button from "./Button";
 import UpdateContent from "./UpdateContent";
-import { CardsType, Work } from "../TodoType";
+import { CardsType, Work } from "../type/TodoType";
 
 const Cards = (props: CardsType) => {
   const [updateState, setUpdateState] = useState<boolean>(false);
