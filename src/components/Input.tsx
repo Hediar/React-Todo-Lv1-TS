@@ -1,4 +1,6 @@
-const Input = (props: any) => {
+import { InputType } from "../TodoType";
+
+const Input = (props: InputType) => {
   return (
     <>
       <label>{props.labelName}</label>

@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { UpdateTextType } from "../TodoType";
 
-const UpdateContent = (props: any) => {
+const UpdateContent = (props: UpdateTextType) => {
   const [newTitle, setnewTitle] = useState<string>(props.item.work);
   const [newContent, setnewContent] = useState<string>(props.item.content);
 

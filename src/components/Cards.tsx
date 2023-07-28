@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import Button from "./Button";
 import UpdateContent from "./UpdateContent";
-import { Work } from "../TodoType";
+import { CardsType, Work } from "../TodoType";
 
-const Cards = (props: any) => {
+const Cards = (props: CardsType) => {
   const [updateState, setUpdateState] = useState<boolean>(false);
 
   const updateBoxRef = useRef<HTMLDivElement>(null);
@@ -12,7 +12,7 @@ const Cards = (props: any) => {
     setUpdateState(!updateState);
   };
 
-  const completeUpdateButtonHandler = (id: number) => {
+  const completeUpdateButtonHandler = (id: string) => {
     // 수정 title, content
 
     const findUpdateBoxTitle = (
@@ -25,7 +25,7 @@ const Cards = (props: any) => {
       ) as HTMLTextAreaElement
     ).value;
 
-    const newSetting = (id: number) => {
+    const newSetting = (id: string) => {
       const working: Work[] = props.working;
 
       const newWorking = working.map((data) => {

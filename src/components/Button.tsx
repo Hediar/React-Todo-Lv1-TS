@@ -1,4 +1,6 @@
-const Button = (props: any) => {
+import { ButtonType } from "../TodoType";
+
+const Button = (props: ButtonType) => {
   return (
     <button
       className={props.role}

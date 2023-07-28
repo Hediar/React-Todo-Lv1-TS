@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import Cards from "./components/Cards";
 import Input from "./components/Input";
 import { Work } from "./TodoType";
+import { v4 } from "uuid";
 
 function App() {
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
 
-  const [working, setworking] = useState<any[]>([]);
+  const [working, setworking] = useState<Work[]>([]);
 
   useEffect(() => {
     const data = localStorage.getItem("todokey");
@@ -29,7 +30,7 @@ function App() {
   const clickAddButtonHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const newWorking: Work = {
-      id: working.length + 1,
+      id: v4(),
       work: title,
       content: content,
       isDone: false,
@@ -41,13 +42,13 @@ function App() {
     setContent("");
   };
 
-  const clickDeleteButtonHandler = (id: number) => {
+  const clickDeleteButtonHandler = (id: string) => {
     const updateWokrings = working.filter((work) => work.id !== id);
     setworking(updateWokrings);
     localStorage.setItem("todokey", JSON.stringify([...updateWokrings]));
   };
 
-  const clickCompleteButtonHandler = (id: number) => {
+  const clickCompleteButtonHandler = (id: string) => {
     const updateWokrings = working.map((work) => {
       if (work.id === id) {
         return { ...work, isDone: true };
@@ -58,7 +59,7 @@ function App() {
     localStorage.setItem("todokey", JSON.stringify([...updateWokrings]));
   };
 
-  const clickCancelButtonHandler = (id: number) => {
+  const clickCancelButtonHandler = (id: string) => {
     const updateWokrings = working.map((work) => {
       if (work.id === id) {
         return { ...work, isDone: false };
@@ -90,7 +91,7 @@ function App() {
       <div className="list">
         <h1>Working..</h1>
         <div>
-          <div className="working">
+          <div className="working-state">
             {working
               .filter((work) => {
                 return work.isDone === false;
