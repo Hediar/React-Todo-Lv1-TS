@@ -1,19 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Button from "./Button";
 import UpdateContent from "./UpdateContent";
 import { Work } from "../TodoType";
 
 const Cards = (props: any) => {
   const [updateState, setUpdateState] = useState<boolean>(false);
-  // const [working, setworking] = useState<any[]>([]);
-  const updateBoxRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   const data = localStorage.getItem("todokey");
-  //   if (data) {
-  //     setworking(JSON.parse(data));
-  //   }
-  // }, [updateState]);
+  const updateBoxRef = useRef<HTMLDivElement>(null);
 
   const updateButtonHandler = () => {
     setUpdateState(!updateState);
@@ -33,7 +26,7 @@ const Cards = (props: any) => {
     ).value;
 
     const newSetting = (id: number) => {
-      const working = props.working as Work[];
+      const working: Work[] = props.working;
 
       const newWorking = working.map((data) => {
         if (data.id === id) {
