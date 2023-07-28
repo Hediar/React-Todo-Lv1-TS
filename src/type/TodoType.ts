@@ -17,7 +17,7 @@ export interface CardsType {
   deletefnc(id: string): void;
   statefnc(id: string): void;
   working: Work[];
-  setwork: any;
+  setwork: React.Dispatch<React.SetStateAction<Work[]>>;
   children: string;
 }
 
